@@ -1,7 +1,7 @@
 ﻿Function Set-DNS 
 {
     $currentDNSservers = (Get-WmiObject Win32_NetworkAdapterConfiguration -Filter "IPEnabled='True'").DNSServerSearchOrder
-    $DNSservers = "172.21.10.52", "172.18.10.51"
+    $DNSservers = "xxx.xx.xx.xx", "xxx.xx.xx.xx"
     if ((Compare-Object -ReferenceObject $currentDNSservers -DifferenceObject $DNSservers).Length -eq 0) 
     {
      exit
