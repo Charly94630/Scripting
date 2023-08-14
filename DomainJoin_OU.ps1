@@ -203,9 +203,9 @@ switch($UnidadNegocio) {
         }while( $ou -eq'')
         
 
-        $Creds = New-Object System.Management.Automation.PSCredential("tata\soporte.equipos", (ConvertTo-SecureString "***" -AsPlainText -Force))
+        $Creds = New-Object System.Management.Automation.PSCredential("xxx", (ConvertTo-SecureString "***" -AsPlainText -Force))
         Write-Host "Agregando $NuevoHostName al dominio" 
-        Add-Computer -DomainName tata.com.uy -Credential $Creds -OUPath $ou
+        Add-Computer -DomainName xxx.com.uy -Credential $Creds -OUPath $ou
         Read-Host "Presiona Enter para cambiar el nombre de Host"
         if ($RenameHost -eq $true )
         {Rename-Computer -NewName $NuevoHostName -DomainCredential $Creds} 
