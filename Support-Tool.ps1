@@ -19,13 +19,13 @@ write-host -ForegroundColor Red $Intro
 $username2 = "Admin"
 $password2 = ConvertTo-SecureString "***" -AsPlainText -Force
 $credential2 = New-Object System.Management.Automation.PSCredential ($username2, $password2)
-New-PSDrive -Name Y -PSProvider FileSystem -Root \\172.19.19.110\insight -Credential $credential2 -ErrorAction SilentlyContinue
+New-PSDrive -Name Y -PSProvider FileSystem -Root \\xx.xx.xx.xx\insight -Credential $credential2 -ErrorAction SilentlyContinue
 
 $USERPATH = 'C:\Autoinst'
-$UNCPATH = '\\172.19.19.110\ShareRusso\Programas\Autoinstalable\autoinst'
-$UNCINFPATH = '\\172.19.19.110\ShareRusso\Programas\Autoinstalable\Informes'
-$PUTTYPATH = '\\172.19.19.110\ShareRusso\Programas\PuTTY'
-$UNCDRIVERS = '\\172.19.19.110\ShareRusso\Programas\Autoinstalable\drivers'
+$UNCPATH = '\\xx.xx.xx.xx\xx\xx\xx\xx'
+$UNCINFPATH = '\\xx.xx.xx.xx\xx\xx\xx\xx'
+$PUTTYPATH = '\\xx.xx.xx.xx\xx\xx\xx'
+$UNCDRIVERS = '\\xx.xx.xx.xx\xx\xx\xx\xx'
 $publicdsktp = 'c:\users\public\desktop'
 
 
@@ -59,7 +59,7 @@ $opciones = Read-Host
 
 function instalacion_suc {
 
- Copy-Item -Path "\\172.19.19.110\ShareRusso\SIM" -Destination "c:\" -Force
+ Copy-Item -Path "\\xx.xx.xx\xx\xx" -Destination "c:\" -Force
  Copy-Item -Path $UNCPATH -Destination $USERPATH -Recurse -Force
  Copy-Item -Path $PUTTYPATH -Destination 'C:\' -Recurse -Force
  Copy-Item -Path $UNCDRIVERS -Destination 'C:\' -Recurse -Force
@@ -76,7 +76,7 @@ function instalacion_suc {
                             
 function Insight {
     $columns = "Computer Name", "Marca", "Numero de serie", "Ubicacion", "Modelo", "Nombre y apellido", "Cedula", "Dominio", "Sistema operativo", "Arquitectura so", "Cpu", "Cantidad de Memorias", "Memorias", "Capacidad de memorias", "Velocidad de memorias", "Tamaño de discos"
-    $destinationPath = "\\172.19.19.110\insight\insight.csv"
+    $destinationPath = "\\xx.xx.xx.xx\xx\xx.csv"
     $computerInfo = Get-ComputerInfo | Select-Object 'CsName', 'CsManufacturer', 'OsName', 'OsArchitecture', 'CsSystemFamily', 'CsProcessors'
     $diskDriveModel = (Get-WmiObject -Class Win32_DiskDrive).Model
     $biosSerialNumber = (Get-WmiObject -Class Win32_BIOS).SerialNumber
@@ -151,7 +151,7 @@ foreach ($user in $users) {
     }
 
     New-Item -ItemType File -Path $fullFilePath -Force
-    $lines = "http://prd-sim-app01.or.tata.com.uy:7003", "http://sit1r3-sim-app01.or.tata.com.uy:7003"
+    $lines = "http://xx-xx-xx.xx.xx.xxxx", "http://xx-xx-xx.xx"
     Add-Content -Path $fullFilePath -Value $lines
   }
 }
@@ -200,7 +200,7 @@ Copy-Item -Path 'c:\PuTTY\Servidor_Pazos.lnk' -Destination $publicdsktp -Force
 function Gerencia {
 
 Copy-Item -Path 'c:\PuTTY\Servidor_Pazos.lnk' -Destination $publicdsktp -Force
-Copy-Item -Path '\\172.19.19.110\ShareRusso\Programas\Autoinstalable\instaladoresger'-Recurse -Destination 'C:\' -Force
+Copy-Item -Path '\\xx.xx.xx.xx\xx\xx\xx\xx'-Recurse -Destination 'C:\' -Force
 Start-Process 'c:\instaladoresger\ivms.exe' -Wait -ArgumentList '/S'
 Start-Process 'c:\instaladoresger\Ocularis1.exe' -Wait -ArgumentList '/S'
 Start-Process 'c:\instaladoresger\Ocularis2' -Wait -ArgumentList '/S'
@@ -221,10 +221,10 @@ Copy-Item -Path 'c:\PuTTY\CONEXION TATA1.exe.lnk' -Destination $publicdsktp -For
 
 function VNC {
 
-copy-item -Path '\\172.19.19.110\ShareRusso\Programas\Autoinstalable\VNC' -Destination 'c:\temp' -Recurse -Force 
+copy-item -Path '\\xx.xx.xx\xx\xx\xx\VNC' -Destination 'c:\temp' -Recurse -Force 
 Start-Process "C:\temp\VNC\VNC.exe" -Wait -ArgumentList "/silent" -PassThru
  cd 'c:\Program Files\RealVNC\VNC Server'
-  .\vnclicense.exe -add  M2B74-3BN9A-SKBFH-7HAL8-ENVWA
+  .\vnclicense.exe -add xxxxxx
 $password = 'pepe'
 $passwdPath = "${env:ProgramFiles}\RealVNC\VNC Server\vncconfig.exe.config"
 Add-Content -Path $passwdPath -Value "<configuration><useDefaultVncServerProperties><vncServer><user><password>$password</password></user></vncServer></useDefaultVncServerProperties></configuration>"
@@ -240,7 +240,7 @@ function Ingresos {
 
  Copy-Item -Path $UNCPATH -Destination $USERPATH -Recurse -Force
  Copy-Item -Path $PUTTYPATH -Destination 'C:\' -Recurse -Force
- Copy-Item -Path '\\172.19.19.110\ShareRusso\Programas\VPN' -Destination 'c:\' -Recurse -Force
+ Copy-Item -Path '\\xx.xx.xx.xx\xx\xx\xx' -Destination 'c:\' -Recurse -Force
  Start-Process "C:\Autoinst\7zip.exe" -wait -ArgumentList "/S" -PassThru
  Start-Process "C:\Autoinst\adobe.exe" -wait -ArgumentList "/sAll /rs /msi EULA_ACCEPT=YESS" -PassThru
   Start-Process "C:\Autoinst\ChromeSetup.exe" -Wait -ArgumentList "/silent /install" -PassThru
@@ -255,7 +255,7 @@ function Ingresos {
 
  function vpn {
  
- Copy-Item -Path '\\172.19.19.110\ShareRusso\Programas\VPN' -Destination 'c:\' -Recurse -Force
+ Copy-Item -Path '\\xx.xx.xx.xx\xx\xx\xx' -Destination 'c:\' -Recurse -Force
 
  $app = Get-WmiObject -Class win32_product |?{$_.name -match 'cisco'}
 
@@ -293,8 +293,8 @@ Write-Host "Usuario $userName cargado correctamente"
 
  function BuiltinAdmin {
  
- Enable-LocalUser -Name "Administrador"
-Set-LocalUser -Name "Administrador" -Password (ConvertTo-SecureString "T4t4nk4m0n!2020" -AsPlainText -Force)
+ Enable-LocalUser -Name "xxx"
+Set-LocalUser -Name "xxx" -Password (ConvertTo-SecureString "xxx" -AsPlainText -Force)
 
 }
 
@@ -335,7 +335,7 @@ switch ($opciones) {
    Write-Host -ForegroundColor Red 'A continuacion se cargara la configuracion de la opcion seleccionada, por favor AGUARDE PACIENTEMENTE...'
   instalacion_suc
   VNC
-  Copy-Item -Path '\\172.19.19.110\ShareRusso\Programas\Autoinstalable\multi' -Destination $publicdsktp -Force
+  Copy-Item -Path '\\xx.xx.xx.xx\xx\xx\xx\xx' -Destination $publicdsktp -Force
    
 }
 
@@ -415,7 +415,7 @@ switch ($opciones) {
 8 {
 
  Write-Host -ForegroundColor Red 'A continuacion se cargara la configuracion de la opcion seleccionada, por favor AGUARDE PACIENTEMENTE...'
-  Copy-Item -Path "\\172.19.19.110\ShareRusso\SIM"  -Destination "c:\" -Recurse -Force
+  Copy-Item -Path "\\xx.xx.xx.xx\xx\xx"  -Destination "c:\" -Recurse -Force
    Write-Host -ForegroundColor DarkGray ' 1- Error de Seguridad'
    Write-Host -ForegroundColor DarkGray ' 2 - Borrar Cache'
    Write-Host -ForegroundColor DarkGray ' 3 - Instalar / Reinstalar' 
