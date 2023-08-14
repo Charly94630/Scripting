@@ -1,5 +1,5 @@
 ﻿$USER_PATH = "C:\temp"
-$UNC_PATH = "\\tata.com.uy\archivos\publicas\OPRTIT\OCS"
+$UNC_PATH = "\\xx\xx\xx\xx\xx"
 
 
 
