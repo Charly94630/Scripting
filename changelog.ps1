@@ -1,5 +1,5 @@
 ﻿$localFile = "C:\temp\DNS_changelog.txt"
-$remoteFile = "\\tata.com.uy\Archivos\Intercambio Locales\DNS_changelog.txt"
+$remoteFile = "\\xx.xx.xx\xx\xx\DNS_changelog.txt"
 $word = "$env:computerName DNS changed"
 
 
