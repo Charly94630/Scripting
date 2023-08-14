@@ -1,7 +1,7 @@
 ﻿                            
 function Insight {
     $columns = "Computer Name", "Marca", "Numero de serie", "Ubicacion", "Modelo", "Nombre y apellido", "Cedula", "Dominio", "Sistema operativo", "Arquitectura so", "Cpu", "Cantidad de Memorias", "Memorias", "Capacidad de memorias", "Velocidad de memorias", "Tamaño de discos"
-    $destinationPath = "\\172.19.19.110\insight\insight.csv"
+    $destinationPath = "\\xxx.xx.xx.xx\insight\insight.csv"
     $computerInfo = Get-ComputerInfo | Select-Object 'CsName', 'CsManufacturer', 'OsName', 'OsArchitecture', 'CsSystemFamily', 'CsProcessors'
     $diskDriveModel = (Get-WmiObject -Class Win32_DiskDrive).Model
     $biosSerialNumber = (Get-WmiObject -Class Win32_BIOS).SerialNumber
