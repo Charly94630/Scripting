@@ -12,7 +12,7 @@
 write-host -ForegroundColor Magenta $Intro
 
 $SIMPATH = 'c:\SIM'
-$UNCPATH = '\\tata.com.uy\archivos\publicas\OPRTIT\SIM'
+$UNCPATH = '\\xxx.com.uy\xx\xx\xx\xx'
 $USERS = Get-ChildItem c:\users
 
 
