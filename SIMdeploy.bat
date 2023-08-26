@@ -1,7 +1,7 @@
 @echo off
 
 set /p ip=Ingrese una Ip?:
-net use \\%ip%\c$ /user:administrador T4t4nk4m0n!2020
+net use \\%ip%\c$ /user:administrador 
 mkdir "\\%ip%\c$\SIM"
 echo Copiando Archivos
 robocopy "\\xxx.xx.xx.xx\xx\xx " "\\%ip%\c$\SIM " /E
