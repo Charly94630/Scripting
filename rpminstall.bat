@@ -49,7 +49,7 @@ cd C:\Windows\System32\drivers\etc
 echo xx.xx.xx.xx              orm1601 >> hosts
 echo #SIT1R3 >> hosts
 echo xx.xx.xx.xx  sit1r3-xx-xxx >> hosts
-echo xx.xx.xx.xx  sit1r3-xx-xxx  sit1r3-mom-app01.or.tata.com.uy  sit1r3-rpm-app01.or.tata.com.uy >> hosts
+echo xx.xx.xx.xx  sit1r3-xx-xxx  sit1r3-xxx-xxx.xxx.xxx.xxx.xxx  xxx-xxx-xxx.xxx.xxx.xxx.xxx >> hosts
 echo xx.xx.xx.xx  sit1r3-xx-xxx >> hosts
 echo xxx.xx.xx.xx  xxx-xxx-xxx  xxx-xxx-xxx.xx.xx.xx.xx >> hosts
 
