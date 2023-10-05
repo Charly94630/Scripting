@@ -1,6 +1,6 @@
 ﻿Function GithubAPI() {$githubUsername = "carloslopez-tata"
 $githubRepo = "PriterDrivers"
-$pat = "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"
+$pat = "ghp_vjbR0MDdqNkPba2MStKnQsGXO****"
 $outputPath = "C:\temp\drivers.zip"
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes("$($githubUsername):$($pat)"))
 $archiveUrl = "https://api.github.com/repos/$githubUsername/$githubRepo/zipball/main"
